@@ -4,7 +4,7 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
 # === CONFIG ===
-LINK_ACCESSO = "t.me/+K3WOXreZ3ul1ZDdk"
+LINK_ACCESSO = "t.me/+4bbhCPbQwHBjNWVk"
 CSV_FILENAME = "utenti_autorizzati.csv"
 
 # === Funzioni principali ===
