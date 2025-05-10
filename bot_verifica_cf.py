@@ -1,11 +1,11 @@
-import csv
+
 from datetime import datetime
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
 # === CONFIG ===
 LINK_ACCESSO = "LINK_ACCESSO"
-CSV_FILENAME = "utenti_autorizzati.csv"
+
 
 # === Funzioni principali ===
 
@@ -26,11 +26,7 @@ def estrai_info(cf: str):
     except:
         return None, None
 
-def salva_dati(user_id, cf, anno, sesso):
-    data_oggi = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open(CSV_FILENAME, mode='a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([user_id, cf, anno, sesso, data_oggi])
+
 
 # === Bot Handlers ===
 
@@ -52,7 +48,7 @@ async def verifica(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     eta = datetime.now().year - anno
     if eta <= 18:
-        salva_dati(user_id, cf, anno, sesso)
+        
         await update.message.reply_text(f"✅ Hai {eta} anni ({sesso}). Accesso consentito:\n{LINK_ACCESSO}")
     else:
         await update.message.reply_text(f"🚫 Hai {eta} anni. Non hai diritto all'accesso.")
