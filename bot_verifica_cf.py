@@ -55,7 +55,7 @@ async def verifica(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # === Setup bot ===
 
-app = ApplicationBuilder().token("7702698344:AAHNNWCx3Lix3yPBd20tgoMLbx1N_-tJnVk").build()
+app = ApplicationBuilder().token("TOKEN_BOT").build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, verifica))
 app.run_polling()
