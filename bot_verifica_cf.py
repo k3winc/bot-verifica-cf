@@ -4,7 +4,7 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
 # === CONFIG ===
-LINK_ACCESSO = "LINK_ACCESSO"
+#LINK_ACCESSO = "LINK_ACCESSO"
 
 
 # === Funzioni principali ===
