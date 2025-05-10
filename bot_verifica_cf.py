@@ -53,6 +53,7 @@ async def verifica(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"🚫 Hai {eta} anni. Non hai diritto all'accesso.")
 
 # === Setup bot ===
+TOKEN = os.getenv("TOKEN_BOT")
 
 app = ApplicationBuilder().token("TOKEN_BOT").build()
 app.add_handler(CommandHandler("start", start))
