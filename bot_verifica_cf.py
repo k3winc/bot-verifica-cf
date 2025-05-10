@@ -3,8 +3,7 @@ from datetime import datetime
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
 
-# === CONFIG ===
-#LINK_ACCESSO = "LINK_ACCESSO"
+
 
 
 # === Funzioni principali ===
@@ -49,7 +48,7 @@ async def verifica(update: Update, context: ContextTypes.DEFAULT_TYPE):
     eta = datetime.now().year - anno
     if eta <= 18:
         
-        await update.message.reply_text(f"✅ Hai {eta} anni ({sesso}). Accesso consentito:\n{LINK_ACCESSO}")
+        await update.message.reply_text(f"✅ Hai {eta} anni ({sesso}). Accesso consentito:\n{"LINK_ACCESSO"}")
     else:
         await update.message.reply_text(f"🚫 Hai {eta} anni. Non hai diritto all'accesso.")
 
